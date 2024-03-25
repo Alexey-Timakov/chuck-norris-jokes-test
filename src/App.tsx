@@ -9,8 +9,8 @@ export const App = observer(() => {
   const store = useStore();
 
   return (
-    <div>
-      <div className={styles["input-block"]}>
+    <div className="mt-52 mb-40 mx-64">
+      <div className="mb-0 mx-auto w-full lg:w-3/5">
         <InputField />
         <JokeCount />
       </div>

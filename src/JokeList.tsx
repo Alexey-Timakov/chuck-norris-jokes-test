@@ -1,6 +1,5 @@
 import { JokeCard } from "./JokeCard";
 import { Joke } from "./state"
-import styles from "./JokeList.module.scss";
 
 interface IJokeList {
   jokes: Joke[];
@@ -8,12 +7,13 @@ interface IJokeList {
 
 export const JokeList = ({ jokes }: IJokeList) => {
   return (
-    <div className={styles["joke-list"]}>
-      {jokes.map((joke) => {
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-8">
+      {jokes.map((joke, index) => {
         return (
           <JokeCard
             key={joke.id}
             joke={joke}
+            index={index}
           />
         )
       })}
