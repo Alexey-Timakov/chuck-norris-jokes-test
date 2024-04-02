@@ -17,5 +17,6 @@ export const newFetch = async (searchStr: string) => {
   }
   catch (error) {
     console.error(error);
+    throw new Error("Error");
   }
 }

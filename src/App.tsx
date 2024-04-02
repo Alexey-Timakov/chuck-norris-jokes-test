@@ -12,7 +12,10 @@ export const App = observer(() => {
     <div className="mt-52 mb-40 mx-4 md:mx-20 lg:mx-40 2xl:mx-64 ">
       <div className="mb-0 mx-auto w-full lg:w-3/5">
         <InputField />
-        <JokeCount />
+
+        {store.loadJokes.state === "resolved" &&
+          <JokeCount />
+        }
       </div>
 
       {store.loadJokes.state === "resolved" && store.jokes.length > 0 &&
@@ -20,7 +23,7 @@ export const App = observer(() => {
       }
 
       {store.loadJokes.state === "rejected" &&
-        <p className={styles.error}>Error</p>
+        <p className={styles.error}>Something went wrong...</p>
       }
 
       {store.loadJokes.state === "pending" &&
